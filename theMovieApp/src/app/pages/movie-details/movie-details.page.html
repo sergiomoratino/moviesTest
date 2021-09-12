@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ datos?.Title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngIf="datos"> 
+    <ion-card-header>
+      <ion-card-title>
+        {{ datos.Title }}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{ datos.Year }}
+      </ion-card-subtitle>
+      <ion-card-subtitle>
+        {{ datos.Language }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      {{ datos.Plot }}
+      <ion-item lines="none">
+        <ion-icon name="people-outline" slot="start"></ion-icon>        
+        <ion-label text-wrap>{{ datos.Actors }}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

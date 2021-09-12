@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Peliculas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar [(ngModel)]="busqueda" (ionChange)="updateBusqueda($event)"></ion-searchbar>
+
+  <ion-list>
+    <ion-item button *ngFor="let item of (resultadosBusqueda | async)" [routerLink]="['/', 'movies', item.imdbID]">
+        {{ item.Title }}
+    </ion-item>
+  </ion-list>
+</ion-content>
